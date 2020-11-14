@@ -3,15 +3,15 @@
 "use strict";
 
 var map;
-var lat = 50.7765; 
-var lng = -116.8502;
-var zoom = 11;
+var lat = 46.7; 
+var lng = 3;
+var zoom = 6;
 var geojson;
 var lastClickedLayer;
 
 
 var OpenStreetMap_BaW = L.tileLayer("http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png", {
-    minZoom: 11,
+    minZoom: 1,
     attribution: "<a href=\"https://www.linkedin.com/in/tristanforward\">Creator</a>&nbsp&copy; <a href=\"http://www.openstreetmap.org/copyright\">OpenStreetMap</a>"
 });
 
@@ -27,7 +27,7 @@ function initmap() {
 	ext: 'png'});
 
     map.setView(new L.LatLng(lat, lng), zoom);
-    map.addLayer(Stamen_Terrain);
+    map.addLayer(OpenStreetMap_BaW);
 }
 
 initmap();
